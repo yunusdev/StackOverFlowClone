@@ -50,7 +50,7 @@ class QuestionController extends Controller
 
         $this->validate(request(), [
 
-            'title' => 'required|max:255',
+            'title' => 'required|max:191',
             'body' => 'required'
 
         ]);

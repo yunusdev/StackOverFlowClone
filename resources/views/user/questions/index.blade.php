@@ -15,7 +15,7 @@
                     </div>
                     <div class="card-body">
                         @include('layouts._message')
-                        @foreach($questions as $question)
+                        @forelse($questions as $question)
                             <div class="media">
                                 <div class="flex flex-column counters">
                                     <div class="vote">
@@ -49,14 +49,21 @@
                                         Asked by <a href="{{$question->user->url}}">{{$question->user->name}}</a>
                                         <small class="text-muted">{{$question->created_date}}</small>
                                     </p>
-                                    {{str_limit($question->body, 250)}}
+                                    <div>
+                                        {{$question->excerpt}}
+                                    </div>
 
                                 </div>
 
                             </div>
                             <hr>
+                            @empty
 
-                        @endforeach
+                            <div class="alert alert-warning">
+                                There are no questions. Go <a href="{{route('questions.create')}}">Here</a> to create a question...
+                            </div>
+
+                        @endforelse
 
                         {{$questions->links()}}
 

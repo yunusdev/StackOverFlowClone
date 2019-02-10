@@ -21,7 +21,7 @@ class Question extends Model
 
     public  function  answers(){
 
-        return $this->hasMany(Answer::class);
+        return $this->hasMany(Answer::class)->orderBy('votes_count','DESC');
 
     }
 
@@ -72,11 +72,7 @@ class Question extends Model
         return 'unanswered';
     }
 
-    public function getBodyHtmlAttribute(){
 
-        return \Parsedown::instance()->text($this->body);
-
-    }
 
     public function isFavorited(){
 
@@ -92,6 +88,28 @@ class Question extends Model
 
         return $this->favorites->count();
     }
+
+    public function excerpt($length)
+    {
+        return str_limit(strip_tags($this->bodyHtml()), $length);
+    }
+
+    private function bodyHtml()
+    {
+        return \Parsedown::instance()->text($this->body);
+    }
+
+    public function getBodyHtmlAttribute(){
+
+        return clean($this->bodyHtml());
+
+
+    }
+    public function getExcerptAttribute(){
+
+        return $this->excerpt(250);
+    }
+
 
 
 }
