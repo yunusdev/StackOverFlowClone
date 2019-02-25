@@ -11,6 +11,10 @@ class Answer extends Model
     //
     use VotableTrait;
 
+    protected $appends = ['created_date', 'is_up_voted','is_down_voted', 'body_html', 'status_best', 'is_best', 'can_accept', 'can_edit', 'can_delete'];
+
+    protected $with = ['question', 'votes', 'user'];
+
     protected $fillable = [
          'body', 'user_id'
     ];
@@ -36,6 +40,47 @@ class Answer extends Model
 
     }
 
+    public function getCanAcceptAttribute(){
+
+        $user = auth()->user();
+
+        if($user){
+
+            return $user->can('accept', $this);
+
+        }
+
+        return false;
+    }
+
+    public function getCanEditAttribute(){
+
+        $user = auth()->user();
+
+        if($user){
+
+            return $user->can('update', $this);
+
+        }
+
+        return false;
+    }
+
+    public function getCanDeleteAttribute()
+    {
+
+        $user = auth()->user();
+
+        if($user){
+
+            return $user->can('delete', $this);
+
+        }
+
+        return false;
+
+
+    }
     public function user(){
 
         return $this->belongsTo(User::class);

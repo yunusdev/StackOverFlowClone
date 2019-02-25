@@ -21,7 +21,7 @@ class QuestionController extends Controller
     public function index()
     {
         //
-        $questions = Question::with('user')->latest()->paginate(6);
+        $questions = Question::with('user')->latest()->get();
 
         return view('user.questions.index', compact('questions'));
     }
@@ -50,14 +50,16 @@ class QuestionController extends Controller
 
         $this->validate(request(), [
 
-            'title' => 'required|max:191',
+            'title' => 'required|max:191|unique:questions',
             'body' => 'required'
 
         ]);
 
-        $request->user()->questions()->create($request->only('title','body'));
+         $que = $request->user()->questions()->create($request->only('title','body'));
 
-        return redirect(route('questions.index'))->with('success', 'Question Created Successfully');
+         return Question::with('user')->where('id', $que->id)->first();
+
+//        return redirect(route('questions.index'))->with('success', 'Question Created Successfully');
 
     }
 
@@ -113,9 +115,12 @@ class QuestionController extends Controller
 
         $this->authorize('update', $question);
 
-        $question->update($request->only('title','body'));
+         $question->update($request->only('title','body'));
 
-        return redirect(route('questions.index'))->with('success', 'Question Updated Successfully');
+//         return response()->json('ok');
+
+        return $question->fresh();
+//        return redirect(route('questions.index'))->with('success', 'Question Updated Successfully');
     }
 
     /**
@@ -132,6 +137,8 @@ class QuestionController extends Controller
 
         $question->delete();
 
-        return back()->with('danger', 'Question Deleted Successfully');
+        return response()->json('ok');
+
+//        return back()->with('danger', 'Question Deleted Successfully');
     }
 }

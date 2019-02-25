@@ -14,18 +14,26 @@ class FavoritesController extends Controller
         $this->middleware('auth');
     }
 
-    public function fav(Question $question){
+    public function fav(Question $question, Request $request){
 
-        $question->favorites()->attach(auth()->id());
+        if ($request->fav == 'fav'){
 
-        return back();
+            return $question->favorites()->attach(auth()->id());
+
+        }elseif ($request->fav == 'unFav'){
+
+            return $question->favorites()->detach(auth()->id());
+
+        }
+
+//        return back();
     }
 
-    public function unFav(Question $question){
-
-        $question->favorites()->detach(auth()->id());
-
-        return back();
-
-    }
+//    public function unFav(Question $question){
+//
+//        return $question->favorites()->detach(auth()->id());
+//
+////        return back();
+//
+//    }
 }

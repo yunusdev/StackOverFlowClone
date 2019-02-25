@@ -86,14 +86,15 @@ form.form-delete{
     }
 
     &.favorite {
-      &.favorited, &.favorited:hover {
+      &.favorited {
         color: $warning;
       }
+
     }
 
-    &.vote-accepted {
-      color: $green;
-    }
+    //&.vote-accepted {
+    //  color: $green;
+    //}
 
   }
 }

@@ -31,7 +31,7 @@ Route::group(['namespace'=> 'User'], function (){
 
     Route::post('/user/{question}/favorite', 'FavoritesController@fav')->name('favorite.question');
 
-    Route::delete('/user/{question}/favorite', 'FavoritesController@unFav')->name('unFavorite.question');
+//    Route::delete('/user/{question}/favorite', 'FavoritesController@unFav')->name('unFavorite.question');
 
     Route::post('/question/{question}/vote', 'VoteQuestionController@upVoteQuestion')->name('upVote.question');
 

@@ -36,7 +36,9 @@ class VoteQuestionController extends Controller
         $question->votes_count = $vote_count;
         $question->save();
 
-        return back();
+//        return request()->json('ok');
+        return $question->fresh();
+
 
     }
 
@@ -63,7 +65,10 @@ class VoteQuestionController extends Controller
         $question->votes_count = $vote_count;
         $question->save();
 
-        return back();
+        return $question->fresh();
+
+//        return request()->json('ok');
+//        return back();
 
     }
 }
