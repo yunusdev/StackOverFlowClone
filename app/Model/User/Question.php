@@ -10,12 +10,45 @@ class Question extends Model
 
     use VotableTrait;
 
+    public $with = ['user'];
+
+    protected $appends = ['url', 'body_html', 'created_date', 'is_up_voted','is_down_voted', 'status', 'excerpt', 'is_favorited', 'favorites_counts', 'can_edit', 'can_delete'];
+
     protected $fillable = [
         'title', 'body'
     ];
     public function user(){
 
         return $this->belongsTo(User::class);
+
+    }
+
+    public function getCanEditAttribute(){
+
+        $user = auth()->user();
+
+        if($user){
+
+            return $user->can('update', $this);
+
+        }
+
+        return false;
+    }
+
+    public function getCanDeleteAttribute()
+    {
+
+        $user = auth()->user();
+
+        if($user){
+
+             return $user->can('delete', $this);
+
+        }
+
+        return false;
+
 
     }
 
@@ -89,7 +122,7 @@ class Question extends Model
         return $this->favorites->count();
     }
 
-    public function excerpt($length)
+    public function excerpts($length)
     {
         return str_limit(strip_tags($this->bodyHtml()), $length);
     }
@@ -107,7 +140,7 @@ class Question extends Model
     }
     public function getExcerptAttribute(){
 
-        return $this->excerpt(250);
+        return $this->excerpts(250);
     }
 
 

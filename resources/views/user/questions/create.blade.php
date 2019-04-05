@@ -1,5 +1,28 @@
 @extends('layouts.app')
 
+<div class="modal fade" id="createQuestion" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="card card-shadowed p-50 w-400 mb-0" style="max-width: 100%">
+            <h5 class="text-uppercase text-center">Create Question</h5>
+            <hr>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="question-title">Question Title</label>
+                    <input type="text" name="title" v-model="question.title"  id="question-title" class="form-control">
+
+                </div>
+                <div class="form-group">
+                    <label for="question-body">Explain you question</label>
+                    <textarea name="body" id="question-body" v-model="question.body" rows="10" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-bold btn-block btn-primary" type="button">Create Question</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
 @section('content')
     <div class="container">
         <div class="row justify-content-center">

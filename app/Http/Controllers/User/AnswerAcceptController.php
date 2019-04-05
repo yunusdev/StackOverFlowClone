@@ -13,8 +13,10 @@ class AnswerAcceptController extends Controller
     {
         $this->authorize('accept', $answer);
 
-        $answer->question->acceptBestAnswer($answer);
+         $answer->question->acceptBestAnswer($answer);
 
-        return back();
+         return $answer->fresh();
+
+//        return back();
     }
 }

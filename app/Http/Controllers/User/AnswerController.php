@@ -29,12 +29,14 @@ class AnswerController extends Controller
             'body' => 'required'
         ]);
 
-        $question->answers()->create([
+        $ans =$question->answers()->create([
             'body' => $request->body,
             'user_id' => auth()->id()
         ]);
 
-        return back()->with('success', 'Answer Created Successfully');
+        return Answer::where('id', $ans->id)->first();
+
+//        return back()->with('success', 'Answer Created Successfully');
 
 
     }
@@ -76,7 +78,9 @@ class AnswerController extends Controller
 
         $answer->update($request->only('body'));
 
-        return redirect(route('questions.show', $question->slug))->with('success','Answer Edited Successfully');
+        return $answer->fresh();
+
+//        return redirect(route('questions.show', $question->slug))->with('success','Answer Edited Successfully');
 
     }
 
@@ -93,6 +97,6 @@ class AnswerController extends Controller
 
         $answer->delete();
 
-        return back();
+        return request()->json('ok');
     }
 }

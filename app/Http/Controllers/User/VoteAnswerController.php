@@ -36,7 +36,8 @@ class VoteAnswerController extends Controller
         $answer->votes_count = $vote_count;
         $answer->save();
 
-        return back();
+        return $answer->fresh();
+//        return back();
 
     }
 
@@ -63,7 +64,9 @@ class VoteAnswerController extends Controller
         $answer->votes_count = $vote_count;
         $answer->save();
 
-        return back();
+        return $answer->fresh();
+
+//        return back();
 
     }
 }

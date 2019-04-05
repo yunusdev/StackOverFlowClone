@@ -22,6 +22,11 @@ window.Vue = require('vue');
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key)))
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
+Vue.component('vue-create-que', require('./components/CreateQuestion.vue'));
+Vue.component('vue-questions', require('./components/AllQuestion.vue'));
+Vue.component('vue-show-question', require('./components/ShowQuestion.vue'));
+Vue.component('vue-answers', require('./components/Answers.vue'));
+Vue.component('vue-create-answer', require('./components/CreateAnswer.vue'));
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
