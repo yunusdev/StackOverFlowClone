@@ -2,7 +2,7 @@
     <div>
 
         <div class="d-flex offset-4 mb-1">
-            <button @click="createAnswer(questionId)" style="margin-top: 0px"  class="col-4 btn btn-outline-info">Add Answer</button>
+            <button v-show="isLogin" @click="createAnswer(questionId)" style="margin-top: 0px"  class="col-4 btn btn-outline-info">Add Answer</button>
         </div>
 
         <div class="row mt-3" v-if="answers.length > 0">

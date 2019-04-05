@@ -47,10 +47,11 @@
 
 
             <div class="topbar-right">
+                @auth
                 <ul class="topbar-nav nav">
-                    <li class="nav-item"><a class="nav-link" href="{{url('/')}}">Home</a></li>
-
+                    <li class="nav-item"><a class="nav-link" href="#">{{auth()->user()->name}}</a></li>
                 </ul>
+                @endauth
 
                 @guest
                     <div class="d-inline-flex ml-30">

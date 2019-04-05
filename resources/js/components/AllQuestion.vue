@@ -3,7 +3,7 @@
         <div class="card-header">
             <div class="d-flex align-items-center">
                 <h2>All Questions</h2>
-                <div class="ml-auto">
+                <div class="ml-auto" v-show="is_login">
                     <button @click="createLesson()"  class="btn btn-outline-info">Ask Question</button>
                 </div>
             </div>

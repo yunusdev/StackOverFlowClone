@@ -51552,20 +51552,34 @@ var render = function() {
         _c("div", { staticClass: "d-flex align-items-center" }, [
           _c("h2", [_vm._v("All Questions")]),
           _vm._v(" "),
-          _c("div", { staticClass: "ml-auto" }, [
-            _c(
-              "button",
-              {
-                staticClass: "btn btn-outline-info",
-                on: {
-                  click: function($event) {
-                    return _vm.createLesson()
-                  }
+          _c(
+            "div",
+            {
+              directives: [
+                {
+                  name: "show",
+                  rawName: "v-show",
+                  value: _vm.is_login,
+                  expression: "is_login"
                 }
-              },
-              [_vm._v("Ask Question")]
-            )
-          ])
+              ],
+              staticClass: "ml-auto"
+            },
+            [
+              _c(
+                "button",
+                {
+                  staticClass: "btn btn-outline-info",
+                  on: {
+                    click: function($event) {
+                      return _vm.createLesson()
+                    }
+                  }
+                },
+                [_vm._v("Ask Question")]
+              )
+            ]
+          )
         ])
       ]),
       _vm._v(" "),
@@ -52492,6 +52506,14 @@ var render = function() {
         _c(
           "button",
           {
+            directives: [
+              {
+                name: "show",
+                rawName: "v-show",
+                value: _vm.isLogin,
+                expression: "isLogin"
+              }
+            ],
             staticClass: "col-4 btn btn-outline-info",
             staticStyle: { "margin-top": "0px" },
             on: {
