@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="15097469-e1d1-4052-8486-f46048165fbc" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/AllQuestion.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/AllQuestion.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/components/Answers.vue" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/components/Answers.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/base.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/base.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Procfile" beforeDir="false" afterPath="$PROJECT_DIR$/Procfile" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +35,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
+          <entry key="Procfile" value="2" />
           <entry key="env" value="1" />
           <entry key="js" value="13" />
           <entry key="json" value="4" />
@@ -54,12 +51,14 @@
           <entry key="JSON" value="4" />
           <entry key="JavaScript" value="13" />
           <entry key="PHP" value="133" />
+          <entry key="PLAIN_TEXT" value="2" />
           <entry key="SCSS" value="10" />
           <entry key="Vue.js" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="Procfile" value="6" />
           <entry key="env" value="1" />
           <entry key="js" value="251" />
           <entry key="json" value="1" />
@@ -75,6 +74,7 @@
           <entry key="JSON" value="1" />
           <entry key="JavaScript" value="251" />
           <entry key="PHP" value="7178" />
+          <entry key="PLAIN_TEXT" value="6" />
           <entry key="SCSS" value="371" />
           <entry key="Vue.js" value="6748" />
         </counts>
@@ -83,11 +83,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/js/components/Answers.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="282">
               <caret line="117" selection-start-line="117" selection-end-line="117" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Procfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state>
+              <caret column="41" selection-start-column="41" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -190,7 +199,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/database/factories/QuestionFactory.php" />
         <option value="$PROJECT_DIR$/app/Providers/RouteServiceProvider.php" />
         <option value="$PROJECT_DIR$/database/factories/AnswerFactory.php" />
         <option value="$PROJECT_DIR$/resources/js/fontawesome.js" />
@@ -241,6 +249,7 @@
         <option value="$PROJECT_DIR$/resources/views/layouts/base.blade.php" />
         <option value="$PROJECT_DIR$/resources/js/components/AllQuestion.vue" />
         <option value="$PROJECT_DIR$/resources/js/components/Answers.vue" />
+        <option value="$PROJECT_DIR$/Procfile" />
       </list>
     </option>
   </component>
@@ -432,15 +441,16 @@
       <workItem from="1551210782205" duration="607000" />
       <workItem from="1551213915609" duration="545000" />
       <workItem from="1551258607543" duration="17000" />
-      <workItem from="1554420204021" duration="1816000" />
+      <workItem from="1554420204021" duration="2426000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143794000" />
+    <option name="totallyTimeSpent" value="144404000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22844176" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -482,7 +492,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_09_114351_create_favorites.php" />
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_09_114432_create_favorites_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -818,6 +827,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="282">
           <caret line="117" selection-start-line="117" selection-end-line="117" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Procfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="41" selection-start-column="41" selection-end-column="41" />
         </state>
       </provider>
     </entry>
